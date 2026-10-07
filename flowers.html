@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="icon" href="img/Lirio.png" type="image/x-icon" />
-        <title>Flower</title>
-    </head>
-    <body class="container">
-        <audio src="sound/I WANNA BE YOUR SLAVE.mp3" autoplay loop></audio>
-        <div id="lyrics">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
 
-        </div>
-        <h1 class="title">Gracias por estar en mi vida, y también... <br> <br>
-            Gracias por iluminar mis días con tu hermosa sonrisa.</h1>
+    <!-- Fuentes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 
-        <div class="night"></div>
-        <div class="flowers">
+    <!-- Archivo CSS principal -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Ícono del sitio -->
+    <link rel="icon" href="img/IwannaBeYours.png" type="image/x-icon" />
+</head>
+<body class="container">
+    <audio src="sound/I WANNA BE YOURS.mp3" autoplay loop></audio>
+
+    <div id="lyrics-container">
+        <div id="lyrics"></div>
+    </div>
+
+    <h1 class="title">
+        Voy a estar aquí para ti siempre que me necesites, sin pedirte cuentas ni exigirte nada.<br><br>
+        A tu lado para ayudarte, hablar o estar en silencio, el tiempo que tú quieras que me quede.
+    </h1>
+
+    <div class="night"></div>
+    <div class="flowers">
             <div class="flower flower--1">
                 <div class="flower__leafs flower__leafs--1">
                     <div class="flower__leaf flower__leaf--1"></div>
@@ -330,4 +343,11 @@
     <script src="anim.js"></script>
     <script src="main.js"></script>
     </body>
+    <script>
+    const navEntries = performance.getEntriesByType("navigation");
+    if (navEntries.length > 0 && navEntries[0].type === "reload") {
+        window.location.href = "index.html"; // Redirecciona al index
+    }
+</script>
+<script src="js/main.js"></script>
 </html>

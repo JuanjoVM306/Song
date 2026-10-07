@@ -20,34 +20,55 @@ body{
     perspective: 1000px;
 }
 
-#lyrics{
+#lyrics {
     font-size: 40px;
-    font-family: "Franklin Githic Medium", "Arial Narrow", Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     color: white;
-    position: absolute;
-    margin-bottom: 20%;
-    z-index: 1;
+    position: fixed; /* Cambiado a fixed para sacarlo del flujo del flexbox */
+    top: 5vh;        /* Se posiciona siempre visible desde el borde superior */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    z-index: 10000;  /* Por encima del fondo y de las flores */
     font-weight: bold;
     letter-spacing: 4px;
+    pointer-events: none;
 }
-@media only screen and (max-width: 600px){
-    #lyrics{
+
+@media only screen and (max-width: 600px) {
+    #lyrics {
         font-size: 18px;
-        margin-bottom: 530px;
+        top: 4vh;    /* Ajuste para pantallas móviles */
         letter-spacing: 3px;
     }
 }
+
 .titulo {
-    margin-bottom: 180px;
-    font-family: "Arial Narrow", Arial, sans-serif;
-    color: #f00;
     position: absolute;
+    z-index: 10;
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    color: rgb(209, 207, 207);
     font-weight: bold;
-    letter-spacing: 10px;
+    letter-spacing: 6px;
     opacity: 1;
     animation: fadeIn 3s ease-in-out forwards;
     text-align: center;
     font-size: 24px;
+    z-index: 999;    /* Garantiza que esté por encima de las plantas y el fondo */
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .titulo {
+        font-size: 16px;
+        top: 12vh;
+        letter-spacing: 3px;
+    }
 }
 @keyframes fadeIn{
     from{
@@ -1612,7 +1633,7 @@ body, h1, p {
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
-    color: #f00;
+    color: rgb(177, 177, 177);
 }
 
 .container {
